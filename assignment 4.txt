@@ -1,0 +1,273 @@
+﻿QUESTION 4
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+#include<conio.h>
+struct node
+{
+	int height,weight;
+	struct node* next;		
+}
+*head=NULL;
+void create()
+{
+	struct node *p,*q;
+	p=(struct node*)(malloc(sizeof(struct node)));
+	printf("Enter height");
+	scanf("%d",&p->height);
+	printf("Enter weight");
+	scanf("%d",&p->weight);
+	p->next=NULL;
+	if(head==NULL)
+	{
+		head=p;
+	}	
+	else
+	{
+		q=head;
+		while(q->next!=NULL)
+		{
+			q=q->next;
+		} 
+	q->next=p;
+	}
+}
+void display()
+{
+	struct node* p;
+	p=head;
+	while(p!=NULL)
+	{
+		printf("\n%d HEIGHT",p->height);
+		printf("\n%d WEIGHT",p->weight);
+		p=p->next;
+	}
+}
+void del()
+{
+	struct node *p,*q;
+	if(head==NULL)
+	{
+		printf("\nEMPTY");
+	}	
+	else
+	{
+		q=head;	
+		printf("%d is the deleted HEIGHT\n",q->height);
+		printf("%d is the deleted WEIGHT\n",q->weight);
+		head=q->next;
+		free(q);
+	}
+}	
+void max()
+{
+	struct node *p,*q;
+	int max=0;
+	while(p!=NULL)
+	{
+		if(p->height > p->height->next)
+		{
+			max=p->data;
+		}
+	printf("%d",max);
+}	
+int main()
+{	
+	while(1)
+	{	
+	printf("\n Enter Choice");
+	printf("\n Enter  1 to create \n Enter 2 to display \n Enter 3 to delete \n Enter 4 to GET MAXIMUM VALUE \n Enter 5 to GET MINIMUM VALUE");
+	int ch;
+	scanf("%d",&ch);
+	  switch(ch)
+	  {
+	  case 1:
+	  create();
+	  break;
+	  case 2:
+	  display();
+	  break;
+	  case 3:
+	  del();
+	  break;
+	  case 4:
+	  max();
+	  break;
+	  case 5:
+	  min();
+	  break;
+	  case 6:
+	  exit(0);
+	  break;
+	  default:
+	  printf("INVALID INPUT");
+     }
+ }
+}
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+#include<conio.h>
+struct node
+{
+	int data;
+	struct node* next;		
+}
+*head=NULL;
+void create()
+{
+	struct node *p,*q;
+	p=(struct node*)(malloc(sizeof(struct node)));
+	printf("Enter data");
+	scanf("%d",&p->data);
+	p->next=NULL;
+	if(head==NULL)
+	{
+		head=p;
+	}	
+	else
+	{
+		q=head;
+		while(q->next!=NULL)
+		{
+			q=q->next;
+		} 
+	q->next=p;
+	}
+}
+void display()
+{
+	struct node* p;
+	p=head;
+	while(p!=NULL)
+	{
+		printf("\n%d",p->data);
+		p=p->next;
+	}
+}
+void del()
+{
+	struct node *p,*q;
+	if(head==NULL)
+	{
+		printf("\nEMPTY");
+	}	
+	else
+	{
+		q=head;
+		
+		printf("%d is the deleted value\n",q->data);
+		head=q->next;
+		free(q);
+	}
+}		
+int main()
+{	
+	while(1)
+	{	
+	printf("\n Enter Choice");
+	printf("\n Enter  1 to create \n Enter 2 to display \n Enter 3 to delete \n Enter 4 to exit ");
+	int ch;
+	scanf("%d",&ch);
+	  switch(ch)
+	  {
+	  case 1:
+	  create();
+	  break;
+	  case 2:
+	  display();
+	  break;
+	  case 3:
+	  del();
+	  break;
+	  case 4:
+	  exit(0);
+	  break;
+	  default:
+	  printf("INVALID INPUT");
+     }
+ }
+}
+QUESTION 3
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+#include<conio.h>
+struct node
+{
+	int data;
+	struct node* next;		
+}
+*head=NULL;
+void create()
+{
+	struct node *p,*q;
+	p=(struct node*)(malloc(sizeof(struct node)));
+	printf("Enter data");
+	scanf("%d",&p->data);
+	p->next=NULL;
+	if(head==NULL)
+	{
+		head=p;
+	}	
+	else
+	{
+		q=head;
+		while(q->next!=NULL)
+		{
+			q=q->next;
+		} 
+	q->next=p;
+	}
+}
+void display()
+{
+	struct node* p;
+	p=head;
+	while(p!=NULL)
+	{
+		printf("\n%d",p->data);
+		p=p->next;
+	}
+}
+int main()
+{	
+	while(1)
+	{	
+	printf("Enter Choice");
+	printf("\n Enter  1 to create \n Enter 2 to display \n Enter 3 to delete value 7 \n Enter 4 to reverse \n Enter 5 to sort \n Enter 6 to display \n Enter 7 to exit ");
+	int ch;
+	scanf("%d",&ch);
+	  switch(ch)
+	  {
+	  case 1:
+	  create();
+	  break;
+	  case 2:
+	  display();
+	  break;
+	  case 7:
+	  exit(0);
+	  break;
+	  default:
+	  printf("INVALID INPUT");
+     }
+ }
+}
+QUESTION  1
+#include<stdio.h>
+#include<time.h>
+int main()
+{
+clock_t start,end;
+double timeused;
+start=clock();
+printf("%f",start);
+for(int i=0;i<30000;i++)
+	printf("%d\n",i);
+end=clock();
+timeused=(double)(end - start)/CLOCKS_PER_SEC;
+printf("Time consumed %f    %f",timeused,CLOCKS_PER_SEC);
+}	
+	  	
+	
